@@ -1,0 +1,3 @@
+use npm inti to initiate project
+install node-sass globaly / locally (--save-dev node-sass)
+? npm install jquery
