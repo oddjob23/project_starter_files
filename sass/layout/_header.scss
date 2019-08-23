@@ -1,0 +1,18 @@
+.header {
+    &__heading--1 {
+            font-size: 4.8rem;
+            font-weight: 700;
+            padding-bottom: 2rem;
+    }
+    &__subheader {
+        font-size: 1.6rem;
+        font-weight: 300;
+        max-width: 50%;
+        line-height: 1.8; 
+    }
+    &__heading--3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 4rem;
+    }
+}

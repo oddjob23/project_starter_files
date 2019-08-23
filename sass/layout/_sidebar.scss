@@ -1,0 +1,43 @@
+.right-col {
+    .row {
+        margin-bottom: 6rem;
+    }
+}
+.col-xl-2 {
+    flex: 0 0 70px;
+    max-width: 70px;
+}
+.circle {
+    width: 70px;
+    height: 70px;
+    border: 1px solid $primary;
+    border-radius: 50%;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: dashed;
+    .active {
+        background-color: $light-blue;
+    }
+    span {
+        font-size: 4.2rem;
+        font-weight: 600;
+        color: $primary;
+    }
+}
+.action_buttons {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+        font-size: 1.8rem;
+        border: 1px solid $primary;
+        padding: 1.4rem;
+        margin-left: 1rem;
+    }
+}
+
+.right-side {
+    padding-left: 30px;
+}

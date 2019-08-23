@@ -1,0 +1,29 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    max-width: 1920px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    color: $black;
+    border: 1px solid #eee;
+    font-size: 1.6rem;
+}
+ul {
+    list-style-type: none;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+}

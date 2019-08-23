@@ -1,5 +1,10 @@
-body {
-    font-size: 2rem;
-    line-height: 1.7rem;
-    
-}
+@import 'abstracts/variables';
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'vendor/bootstrap'; 
+@import 'layout/grid';
+
+@import 'layout/header';
+@import 'layout/forms';
+@import 'layout/sidebar';

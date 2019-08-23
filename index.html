@@ -4,9 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Event page</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row main-row">
+            <div class="col-xl-8 left-col">
+                <header class="header">
+                    <h1 class="header__heading--1">
+                        Create a predefined event
+                    </h1>
+                    <h3 class="header__subheader">
+                        I know one spark will shock the world, yeah yeah. Just own the night like the 4th of July! Let's start with the basics.
+                    </h3>
+
+                    <h3 class="header__heading--3">
+                        Event basics
+                    </h3>
+                </header>
+
+                <form class="form">
+                    <div class="form-row">
+                        <div class="col">
+                           <div class="form-group">
+                               <label>Name:</label>
+                               <input class="form-control" type="text" id="name" name="name">
+                               <p class="text-primary text-right pt-2">+ Add Keywords</p>
+                            </div>    
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="aliaas">Alias (optional)</label>
+                                <input type="text" class="form-control" name="alias" id="alias">
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                             <div class="form-group">
+                                <div class="button-group">
+                                    <button class="btn btn-outline-default">Default</button>
+                                    <button class="btn btn-outline-default">Automic closing</button>
+                                    <button class="btn btn-outline-default btn-primary text-white">Maintenance</button>
+                                    <button class="btn btn-outline-default ">Need approval</button>
+                                    <button class="btn btn-outline-default">Questionnaire</button>
+                                </div>
+                                <p class="helper-text">
+                                    Tousled truffaut typewriter, small batch fashion axe four dollar toast brunch lyft austin direct trade retro trust fund portland.
+                                </p>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="form-row">
+                        <div class="col-xl-4">
+                            <div class="form-group">
+                                <label for="parentEvent">Parent Event</label>
+                                <select class="form-control" type="text" name="parentEvent" id="parentEvent">
+                                    <optgroup label="event type group">
+                                        <option value="1">Item 1</option>
+                                        <option value="2">Item 2</option>
+                                        <option value="3">Item 3</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-xl-8">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea name="description" id="description" class="form-control"></textarea>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-4 right-col">
+                <div class="row">
+                    <div class="col-xl-2">
+                        <div class="circle active">
+                            <span>1</span>
+                        </div>
+                    </div>
+                    <div class="col right-side">
+                        <div class="content">
+                            <div class="content__title">
+                                <h2>Event Basics</h2>
+                            </div>
+                            <div class="content__text">
+                                <p>
+                                    I know one spark will shock the world, yeah yeah. Just own the night like the 4th of July!
+                                    <br/>
+                                    <br/>
+                                    Let's start with the basics.
+                                </p>
+  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-2">
+                        <div class="circle">
+                            <span>2</span>
+                        </div>
+                    </div>
+                    <div class="col right-side">
+                        <div class="content">
+                            <div class="content__title">
+                                <h2>Severity & responsible users</h2>
+                            </div>
+                            <div class="content__text">
+                               <p> Street art thundercats affogato jianbing hell of mustache snackwave echo park cold-pressed chicharrones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-2">
+                        <div class="circle">
+                            <span>3</span>
+                        </div>
+                    </div>
+                    <div class="col right-side">
+                        <div class="content">
+                            <div class="content__title">
+                                <h2>Event placement</h2>
+                            </div>
+                            <div class="content__text">
+                                <p>Readymade salvia lyft adaptogen YOLO banh mi hashtag cloud bread actually offal cornhole pour-over authentic direct trade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-xl-2">
+                        <div class="circle">
+                            <span>4</span>
+                        </div>
+                    </div>
+                    <div class="col right-side">
+                        <div class="content">
+                            <div class="content__title">
+                                <h2>Customization (optional)</h2>
+                            </div>
+                            <div class="content__text">
+                                <p>Readymade salvia lyft adaptogen YOLO banh mi hashtag cloud bread actually offal cornhole pour-over authentic direct trade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-auto">
+                    <div class="col action_buttons">
+                        <button class="btn btn-outline text-primary">
+                            Save as draft
+                        </button>
+                        <button class="btn btn-outline text-primary">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
