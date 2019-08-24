@@ -22,7 +22,13 @@
                 font-size: 1.6rem;
                 font-weight: 300;
                 color: $gray-600;
-            }           
+            }
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
         }
         select {
             font-size: 1.6rem;

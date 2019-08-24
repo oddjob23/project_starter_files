@@ -105,6 +105,11 @@ body {
       font-size: 1.6rem;
       font-weight: 300;
       color: #657187; }
+    .form .form-group .button-group label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
   .form .form-group select {
     font-size: 1.6rem;
     border-radius: 4px; }
@@ -153,3 +158,11 @@ body {
 
 .right-side {
   padding-left: 30px; }
+
+#right_arrow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 4rem;
+  margin-top: -15rem;
+  margin-right: -12rem; }

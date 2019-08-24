@@ -1,3 +1,87 @@
-use npm inti to initiate project
-install node-sass globaly / locally (--save-dev node-sass)
-? npm install jquery
+<div class="col-xl-4 right-col">
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <div class="circle active">
+                                    <span>1</span>
+                                </div>
+                            </div>
+                            <div class="col right-side">
+                                <div class="content">
+                                    <div class="content__title">
+                                        <h2>Event Basics</h2>
+                                    </div>
+                                    <div class="content__text">
+                                        <p>
+                                            I know one spark will shock the world, yeah yeah. Just own the night like the 4th of July!
+                                            <br/>
+                                            <br/>
+                                            Let's start with the basics.
+                                        </p>
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <div class="circle">
+                                    <span>2</span>
+                                </div>
+                            </div>
+                            <div class="col right-side">
+                                <div class="content">
+                                    <div class="content__title">
+                                        <h2>Severity & responsible users</h2>
+                                    </div>
+                                    <div class="content__text">
+                                    <p> Street art thundercats affogato jianbing hell of mustache snackwave echo park cold-pressed chicharrones.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <div class="circle">
+                                    <span>3</span>
+                                </div>
+                            </div>
+                            <div class="col right-side">
+                                <div class="content">
+                                    <div class="content__title">
+                                        <h2>Event placement</h2>
+                                    </div>
+                                    <div class="content__text">
+                                        <p>Readymade salvia lyft adaptogen YOLO banh mi hashtag cloud bread actually offal cornhole pour-over authentic direct trade.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <div class="circle">
+                                    <span>4</span>
+                                </div>
+                            </div>
+                            <div class="col right-side">
+                                <div class="content">
+                                    <div class="content__title">
+                                        <h2>Customization (optional)</h2>
+                                    </div>
+                                    <div class="content__text">
+                                        <p>Readymade salvia lyft adaptogen YOLO banh mi hashtag cloud bread actually offal cornhole pour-over authentic direct trade.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-auto">
+                            <div class="col action_buttons">
+                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="eventBasic">
+                                    Save as draft
+                                </button>
+                                <button class="btn btn-outline text-primary submit" type="submit">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                    </div>
