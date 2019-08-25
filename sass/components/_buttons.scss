@@ -20,7 +20,7 @@ $height: $width / 2 + $padding;
     justify-content: center;
     border-radius: 50%;
     position: absolute;
-    top: 90%;
+    bottom: 12rem; 
     right: 32%;  
 }
 
@@ -34,7 +34,7 @@ $height: $width / 2 + $padding;
     border-radius: 50%;
     border: 1px solid transparent;
     position: absolute;
-    top: 90%;
+    bottom:12rem;
     right: 36%;
     z-index: 10;
     background-color: $white;
