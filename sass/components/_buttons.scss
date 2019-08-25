@@ -21,7 +21,7 @@ $height: $width / 2 + $padding;
     border-radius: 50%;
     position: absolute;
     top: 90%;
-    right: 33%;
+    right: 32%;  
 }
 
 .prev {
@@ -35,7 +35,7 @@ $height: $width / 2 + $padding;
     border: 1px solid transparent;
     position: absolute;
     top: 90%;
-    right: 37%;
+    right: 36%;
     z-index: 10;
     background-color: $white;
     color: $primary;
@@ -45,6 +45,27 @@ $height: $width / 2 + $padding;
         border: 1px solid transparent;
     }
 
+}
+.draft {
+  height: 5rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.submit {
+  height: 5rem;
+  width: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  background-color: $primary;
+  border-radius: 4px;
+  &:disabled {
+    background-color: $light-background !important;
+  }
 }
   .switch {
     position: relative;
@@ -75,7 +96,7 @@ $height: $width / 2 + $padding;
         z-index: 4;
         position: absolute;
         top: 1.65rem;
-        left: 2.2rem;
+        left: 1.8rem;
         color: $gray-400;
     }
     i.fa-check {
@@ -93,7 +114,7 @@ $height: $width / 2 + $padding;
     content: "";
     height: 3.7rem;
     width: 3.7rem;
-    left: 8px;
+    left: 4px;
     bottom: 6px;
     top: 4px;
     background-color: $white;
@@ -119,7 +140,7 @@ $height: $width / 2 + $padding;
   input:checked + .slider:before {
     -webkit-transform: translateX(3.8rem);
     -ms-transform: translateX(3.8rem);
-    transform: translateX(4.9rem);
+    transform: translateX(5.2rem);
     background-color: $primary;
     i.fa-check {
         opacity: 1;

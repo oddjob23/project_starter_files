@@ -103,5 +103,24 @@
             }
         }
     }
+    .time-group {
+        display: block;
+        margin-left: 2rem;
+        .hours-input {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            input {
+                margin-right: 1rem;
+                height: 5rem;
+            }
+        }
+    }
+    input#escalation:checked {
+        .time-group {
+            display: block;
+        }
+    }
+    
 }
 

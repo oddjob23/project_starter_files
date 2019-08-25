@@ -13,6 +13,19 @@ body {
     font-size: 4.8rem;
     font-weight: 700;
 }
+.text-50 {
+    max-width: 52%;
+}
+.text-gray {
+    color: $gray-600;
+}
+.text--description {
+    margin-top: 2rem;
+    color: $gray-600;
+}
+.small--description {
+    font-size: 1.2rem;
+}
 @media screen and (min-width: 920px) {
     html {
         font-size: 50%;

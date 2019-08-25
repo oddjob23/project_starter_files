@@ -9,8 +9,8 @@
     max-width: 70px;
 }
 .circle {
-    width: 70px;
-    height: 70px;
+    width: 7rem;
+    height: 7rem;
     border: 1px solid $primary;
     border-radius: 50%;  
     display: flex;
@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-top: 13rem;
     button {
         font-size: 1.8rem;
         border: 1px solid $primary;

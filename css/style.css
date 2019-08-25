@@ -42,6 +42,19 @@ body {
   font-size: 4.8rem;
   font-weight: 700; }
 
+.text-50 {
+  max-width: 52%; }
+
+.text-gray {
+  color: #657187; }
+
+.text--description {
+  margin-top: 2rem;
+  color: #657187; }
+
+.small--description {
+  font-size: 1.2rem; }
+
 @media screen and (min-width: 920px) {
   html {
     font-size: 50%; } }
@@ -168,6 +181,18 @@ body {
     height: 4.8rem; }
     .form .form-group .custom-switch input {
       height: 4.8rem; }
+  .form .time-group {
+    display: block;
+    margin-left: 2rem; }
+    .form .time-group .hours-input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .form .time-group .hours-input input {
+        margin-right: 1rem;
+        height: 5rem; }
+  .form input#escalation:checked .time-group {
+    display: block; }
 
 .right-col {
   background-color: rgba(255, 255, 255, 0.24); }
@@ -179,8 +204,8 @@ body {
   max-width: 70px; }
 
 .circle {
-  width: 70px;
-  height: 70px;
+  width: 7rem;
+  height: 7rem;
   border: 1px solid #4073EB;
   border-radius: 50%;
   display: flex;
@@ -204,7 +229,8 @@ body {
   height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  margin-top: 13rem; }
   .action_buttons button {
     font-size: 1.8rem;
     border: 1px solid #4073EB;
@@ -232,7 +258,7 @@ body {
   border-radius: 50%;
   position: absolute;
   top: 90%;
-  right: 33%; }
+  right: 32%; }
 
 .prev {
   height: 6rem;
@@ -245,7 +271,7 @@ body {
   border: 1px solid transparent;
   position: absolute;
   top: 90%;
-  right: 37%;
+  right: 36%;
   z-index: 10;
   background-color: #FFFFFF;
   color: #4073EB; }
@@ -253,6 +279,26 @@ body {
     background-color: #FFFFFF;
     color: #4073EB;
     border: 1px solid transparent; }
+
+.draft {
+  height: 5rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px; }
+
+.submit {
+  height: 5rem;
+  width: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  background-color: #4073EB;
+  border-radius: 4px; }
+  .submit:disabled {
+    background-color: #E2E9F9 !important; }
 
 .switch {
   position: relative;
@@ -280,7 +326,7 @@ body {
     z-index: 4;
     position: absolute;
     top: 1.65rem;
-    left: 2.2rem;
+    left: 1.8rem;
     color: #8287A2; }
   .slider i.fa-check {
     position: absolute;
@@ -295,7 +341,7 @@ body {
   content: "";
   height: 3.7rem;
   width: 3.7rem;
-  left: 8px;
+  left: 4px;
   bottom: 6px;
   top: 4px;
   background-color: #FFFFFF;
@@ -315,7 +361,7 @@ input:focus + .slider {
 input:checked + .slider:before {
   -webkit-transform: translateX(3.8rem);
   -ms-transform: translateX(3.8rem);
-  transform: translateX(4.9rem);
+  transform: translateX(5.2rem);
   background-color: #4073EB; }
   input:checked + .slider:before i.fa-check {
     opacity: 1;
