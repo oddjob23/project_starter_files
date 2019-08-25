@@ -1,4 +1,5 @@
 .right-col {
+    background-color: rgba(255, 255, 255, .24);
     .row {
         margin-bottom: 6rem;
     }
@@ -16,13 +17,20 @@
     align-items: center;
     justify-content: center;
     border-style: dashed;
-    .active {
-        background-color: $light-blue;
-    }
+
     span {
-        font-size: 4.2rem;
-        font-weight: 600;
+        font-size: 3rem;
+        font-weight: 400;
         color: $primary;
+    }
+}
+.active_circle {  
+    background-color: $light-background;
+}
+.completed_circle {
+    background-color: $primary;
+    span {
+        color: $white;
     }
 }
 .action_buttons {
