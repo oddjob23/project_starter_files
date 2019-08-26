@@ -297,10 +297,10 @@
                                         <label>Productivity impact</label>
                                         <div class="button-group btn-group btn-group-toggle productivity-buttons" id="productivity-buttons">
                                             <label class="btn btn-default btn-primary active" for="impact_yes">
-                                                <input type="checkbox" name="impact" id="impact_yes" value="true"> Yes
+                                                <input type="checkbox" name="impact" id="impact_yes" value=""> Yes
                                             </label>
                                             <label class="btn btn-default" for="impact_no">
-                                                <input type="checkbox" name="impact" id="impact_no" value="false"> No
+                                                <input type="checkbox" name="impact" id="impact_no" value=""> No
                                             </label>
                                         </div>
                                     </div>   
@@ -309,7 +309,7 @@
                                     <div class="form-group">
                                         <label for="hours">Auto close after</label>
                                         <input type="number" name="closing_hours" id="hours" value="2"
-                                        class="form-control" placeholder="Enter hours">
+                                class="form-control" >
                                     </div>
                                 </div>
                             </div>
@@ -445,7 +445,7 @@
                                 <div class="col-xl-7">
                                     <div class="form-group">
                                         <label>Event frequency</label>
-                                        <div class="button-group btn-group btn-group-toggle">
+                                        <div class="button-group btn-group btn-group-toggle frequency-buttons" id="frequency_buttons">
                                             <label class="btn btn-default" for="default">
                                                 <input type="radio" name="type" id="default" value="default"> Default
                                             </label>

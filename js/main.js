@@ -11,7 +11,7 @@ let event = {
     basic: draftEventBasics,
     severity: draftEventSeverity
 }
-let interfaces = [IEventBasic, IEventSeverity]
+let interfaces = [IEventBasic, IEventSeverity, IEventPlacement]
 const grid = $('.grid')[0];
 // brojevi - placeholder za broj ikonica
 let brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
@@ -55,6 +55,17 @@ function IEventSeverity(levelOfSupport, userGroup, severity, automaticEscalation
     }
 
 }
+function IEventPlacement(...values) {
+    this.area = values[0];
+    this.frequency = values[1];
+    this.checkpoint = values[2];
+
+    return {
+        area: this.area,
+        frequency: this.frequency,
+        checkpoint: this.checkpoint
+    }
+}
 // function that dynamically fills in the grid on the page
 function fillGrid(arr, element) {
 
@@ -91,7 +102,8 @@ function submitForm(form, obj) {
 }
 function selectButton(button, selector) {
     
-    $(`#${selector} label.active`).not(this).removeClass('active');
+    // $(`#${selector} label.active`).not(this).removeClass('active');
+    $("#" + selector + "label.active").not(this).removeClass('active');
     $(`#${selector} label.btn-primary`).not(this).removeClass('btn-primary');
     $(button).addClass('btn-primary');
     $(button).addClass('active');
@@ -107,7 +119,7 @@ $('.save-draft-btn').click((e) => {
 });
 
 $(".draft-btn").click((e) => {
-    console.log(formsList[counter]);
+    console.log(counter);
     submitForm(formsList[counter], interfaces[counter]);
     counter += 1;
     if (counter > 3) {
@@ -132,7 +144,15 @@ $('.severity-buttons label').click(function (e) {
 $('.productivity-buttons label').click(function (e) {
     e.preventDefault();
     selectButton($(this), e.target.parentElement.id);
+});
+$('.frequency-buttons label').click(function (e) {
+    selectButton($(this), e.target.parentElement.id)
 })
+$('.grid').on('click', 'label.label_icons', function (e) {
+    $('label.label_icons').toggleClass('selected_element').siblings().removeClass('selected_element');
+    console.log($(this))
+});
+
 // creating draft Event
 let counter = 0;
 
@@ -147,9 +167,9 @@ $('.prev-button').click((e) => {
 
 
 
-$('.label_icons').click(function (e) {  
-    $(this).toggleClass('selected_element').siblings().removeClass('selected_element');
-});
+// $('.label_icons').click(function (e) {  
+//     $(this).toggleClass('selected_element').siblings().removeClass('selected_element');
+// });
 // disabling auto slide from bootstrap carousel
 
 /******* CLICK EVENTS END ******/
