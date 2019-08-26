@@ -1,5 +1,5 @@
 // colors
-
+@import '../../node_modules/bootstrap/scss/root';
 /* grays */
 $gray-50: #F2F3F8;
 $gray-200: #E1E7F1;
@@ -18,3 +18,7 @@ $light-shadow: rgba(255, 255, 255, .24);
 $shadow: rgba(0, 0, 0, .21);
 
 $wrapper-padding: 50px 75px 0px 150px;
+
+$theme-colors: (
+    "primary": $primary
+)

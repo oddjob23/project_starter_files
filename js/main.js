@@ -1,6 +1,10 @@
-
-
+const eventBasicsForm = $('#eventBasic');
+const severityForm = $('#eventSeverity');
+const eventPlacement = $('#eventPlacement');
+const iconForm = $('#iconForm');
+const formsList = [eventBasicsForm, severityForm, eventPlacement, iconForm];
 let events = [];
+let draftEvents = [];
 let draftEventBasics;
 let draftEventSeverity;
 let event = {
@@ -12,11 +16,8 @@ const grid = $('.grid')[0];
 // brojevi - placeholder za broj ikonica
 let brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
 
-const eventBasicsForm = $('#eventBasic');
-const severityForm = $('#eventSeverity');
-const eventPlacement = $('#eventPlacement');
-const iconForm = $('#iconForm');
-const formsList = [eventBasicsForm, severityForm, eventPlacement, iconForm];
+
+
 let current = 0;
 
 function IEventBasic(...values) {
@@ -73,73 +74,77 @@ function fillGrid(arr, element) {
     `;
 }
 
-function submitForm(form, e, obj) {
-
-    /*
-     - call the function on submit event 
-     - funkcija treba da uzme vrednosti za svako polje u formi
-     - funkcija treba da extract samo values od input elemenata iz forme
-     - funkcija treba da kreira novi objekat i da ga doda u listu vec kreiranih objekata
-    */
-
-    // result - type Array - contains all the field elements inside of the form tag 
-    let results = form.serializeArray();
+function submitForm(form, obj) {
+        // result - type Array - contains all the field elements inside of the form tag 
+    let results = $(form).serializeArray();
     let values = [];
-
-    // values - extracted values from result array (each individual value field for form element (name, alias, type, parentEvent, description))
+    // values - extracted values from result array
     results.forEach((el) => {
-
         values.push(el.value);
     });
-    console.log(`results: `, results);
-    console.log(`values: `, values);
-    //     if (values[0] === "" || values[0] === undefined) {
-    //         return -1;
-    //    }
-    // adding new event by using constructor defined previously
-    //events.push(new obj(...values));
 
-    // saving the draft event because this is under the draft button event click
-    // draftEventBasics = new obj(...values);
-    // event.basic = draftEventBasics;
-    // event.severity = draftEventSeverity;
-    e.preventDefault();
+
+    // adding new event by using constructor defined previously
+
+    draftEvents.push(new obj(...values));
+    console.log(draftEvents);
 }
+function selectButton(button, selector) {
+    
+    $(`#${selector} label.active`).not(this).removeClass('active');
+    $(`#${selector} label.btn-primary`).not(this).removeClass('btn-primary');
+    $(button).addClass('btn-primary');
+    $(button).addClass('active');
+    $(button).children().prop('checked', true);
+    console.log($(button).children());
+}
+
 // getting the values from form - event_basics
 /******* CLICK EVENTS ******/
+$('.save-draft-btn').click((e) => {
+    e.preventDefault();
+    submitForm(formsList[counter], interfaces[counter]);
+});
 
+$(".draft-btn").click((e) => {
+    console.log(formsList[counter]);
+    submitForm(formsList[counter], interfaces[counter]);
+    counter += 1;
+    if (counter > 3) {
+        counter = 3;
+    }
+    e.preventDefault();
+});
+// toggling active class on selected elements in button group fields
+
+$('.type_event_buttons > label').click(function (e) {
+    e.preventDefault();
+    selectButton($(this), e.target.parentElement.id);
+});
+$('.support-buttons label').click(function (e) {
+    e.preventDefault();
+    selectButton($(this), e.target.parentElement.id);
+});
+$('.severity-buttons label').click(function (e) {
+    e.preventDefault();
+    selectButton($(this), e.target.parentElement.id);
+});
+$('.productivity-buttons label').click(function (e) {
+    e.preventDefault();
+    selectButton($(this), e.target.parentElement.id);
+})
 // creating draft Event
 let counter = 0;
-$('.save-draft-btn').click((e) => {
-    submitForm(formsList[counter], e, interfaces[counter]);
-    console.log(event.basic);
-})
-$(".draft-btn").click((e) => {
-    e.preventDefault();
-    submitForm(formsList[counter], e, interfaces[counter]);
-    counter++
-    if (counter > 3) {
-        counter = 0;
-    }
-    console.log(events);
-});
+
 $('.prev-button').click((e) => {
-    counter--;
+    counter -= 1;
     if (counter <= 0) {
         counter = 0;
     }
     console.log('counter: ', counter);
 });
 
-// toggling active class on selected elements in button group fields
-$('.type_event_buttons label').click(function (e) {
-    e.preventDefault();
-    $('.btn-group label.active').not(this).removeClass('active');
-    $('.btn-group label.btn-primary').not(this).removeClass('btn-primary');
-    $(this).addClass('btn-primary');
-    $(this).addClass('active');
-    $(this).children().prop('checked', true);
-});
+
 
 
 $('.label_icons').click(function (e) {  
