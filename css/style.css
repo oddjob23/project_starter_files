@@ -286,7 +286,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 12rem;
+  bottom: 4.7rem;
   right: 32%; }
 
 .prev {
@@ -299,7 +299,7 @@ body {
   border-radius: 50%;
   border: 1px solid transparent;
   position: absolute;
-  bottom: 12rem;
+  bottom: 4.7rem;
   right: 36%;
   z-index: 10;
   background-color: #FFFFFF;

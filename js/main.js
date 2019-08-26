@@ -1,3 +1,10 @@
+let events = [];
+let draftEvent = {};
+const grid = $('.grid')[0];
+// brojevi - placeholder za broj ikonica
+let brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
+
+const eventBasicsForm = $('#eventBasic');
 
 function IEvent(name, alias, type, parentEvent, description) {
     this.name = name;
@@ -14,39 +21,11 @@ function IEvent(name, alias, type, parentEvent, description) {
         description: this.description
     };
 }
-let events = [];
-let draftEvent = {};
-$('#draft').click((e) => {
-    let result = [];
-    $('form').submit(function (event) {
-        result = $(this).serializeArray();
-        let values = []
-        result.forEach((el) => {
-            values.push(el.value);
-        });
-        events.push(new IEvent(values[0], values[1], values[2], values[3], values[4]));
-        draftEvent = new IEvent(values[0], values[1], values[2], values[3], values[4]);
-        console.log(draftEvent);
-        event.preventDefault();
-    });
-    console.log(events);
-});
-
-$('.btn-group label').click(function (e) {
-    e.preventDefault();
-    $('.btn-group label.active').not(this).removeClass('active');
-    $('.btn-group label.btn-primary').not(this).removeClass('btn-primary');
-    $(this).addClass('btn-primary');
-    $(this).addClass('active');
-});
-
-
-$('.carousel').carousel({
-    interval: false
-});
-const grid = $('.grid')[0];
-console.log(grid);
+// function that dynamically fills in the grid on the page
 function fillGrid(arr, element) {
+
+    // loop through each element of the array and extract the value of it into new array 
+    // set the innerHTML od unetog elementa kroz template string
     element.innerHTML = `
         ${arr.map((el, i) => {
         let img_path = `../assets/icons/Icons-1_05-${el}.png`;
@@ -60,11 +39,63 @@ function fillGrid(arr, element) {
     }).join('')}
     `;
 }
+// getting the values from form - event_basics
+function submitForm(form, event) {
+    /*
+     - call the function on submit event 
+     - funkcija treba da uzme vrednosti za svako polje u formi
+     - funkcija treba da extract samo values od input elemenata iz forme
+     - funkcija treba da kreira novi objekat i da ga doda u listu vec kreiranih objekata
+    */
 
-brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
+   // result - type Array - contains all the field elements inside of the form tag 
+   let results = form.serializeArray();
+   let values = [];
+
+   // values - extracted values from result array (each individual value field for form element (name, alias, type, parentEvent, description))
+   results.forEach((el) => {
+
+       values.push(el.value);
+   });
+
+    // adding new event by using constructor defined previously
+    events.push(new IEvent(values[0], values[1], values[2], values[3], values[4]));
+
+    // saving the draft event because this is under the draft button event click
+    draftEvent = new IEvent(values[0], values[1], values[2], values[3], values[4]);
+   event.preventDefault();
+}
+/******* CLICK EVENTS ******/
+$('#draft').click((e) => {
+    e.preventDefault();
+    submitForm(eventBasicsForm, e);
+    console.log(events);
+});
+
+// toggling active class on selected elements in button group fields
+$('.btn-group label').click(function (e) {
+    e.preventDefault();
+    $('.btn-group label.active').not(this).removeClass('active');
+    $('.btn-group label.btn-primary').not(this).removeClass('btn-primary');
+    $(this).addClass('btn-primary');
+    $(this).addClass('active');
+});
 
 
-fillGrid(brojevi, grid);
 $('.label_icons').click(function (e) {  
     $(this).toggleClass('selected_element').siblings().removeClass('selected_element');
-})
+});
+// disabling auto slide from bootstrap carousel
+
+/******* CLICK EVENTS END ******/
+
+$('.carousel').carousel({
+    interval: false
+});
+
+
+
+// calling the functions
+fillGrid(brojevi, grid);
+
+
