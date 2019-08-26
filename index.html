@@ -52,7 +52,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <div class="button-group btn-group btn-group-toggle">
+                                        <div class="type_event_buttons button-group btn-group btn-group-toggle">
                                             <label class="btn btn-default" for="default">
                                                 <input type="radio" name="type" id="default" value="default"> Default
                                             </label>
@@ -183,7 +183,7 @@
                         </div>
                         <div class="row">
                             <div class="col action_buttons">
-                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="eventBasic">
+                                <button class="btn btn-outline text-primary draft save-draft-btn" type="submit" id="draft" form="eventBasic">
                                     Save as draft
                                 </button>
                                 <button class="btn submit" type="submit" disabled>
@@ -212,17 +212,17 @@
                             </h3>
                         </header>
 
-                        <form class="form" id="eventBasic">
+                        <form class="form" id="eventSeverity">
                             <div class="form-row">
                                 <div class="col-xl-4">
                                     <div class="form-group">
                                         <label>Default level of support:</label>
                                         <div class="button-group btn-group btn-group-toggle">
-                                            <label class="btn btn-primary" for="default">
-                                                <input type="radio" name="type" id="default" value="default"> L1
+                                            <label class="btn btn-primary" for="L1">
+                                                <input type="radio" name="supportLevel" id="L1" value="L1"> L1
                                             </label>
-                                            <label class="btn btn-default" for="automatic_closing">
-                                                <input type="radio" name="type" id="automatic_closing" value="automatic closing"> Automatic closing
+                                            <label class="btn btn-default" for="auto_closing">
+                                                <input type="radio" name="supportLevel" id="auto_closing" value="automatic closing"> Automatic closing
                                             </label>
                                         </div>
                                     </div>
@@ -268,9 +268,9 @@
                             <div class="form-row">
                                 <div class="col-xl-4">
                                     <div class="form-group switch-button-group">
-                                        <label for="parentEvent">Enable automatic escalation</label>
-                                        <label class="switch">
-                                            <input type="checkbox" id="escalation">
+                                        <label for="">Enable automatic escalation</label>
+                                        <label for="escalation" class="switch">
+                                            <input type="checkbox" id="escalation" name="automatic_escalation">
                                             <span class="slider round">
                                                 <i class="fas fa-times before"></i>
                                                 <i class="fas fa-check after"></i>
@@ -294,21 +294,22 @@
                             <div class="form-row">
                                 <div class="col-xl-4 mr-5">
                                     <div class="form-group">
-                                        <label for="description">Productivity impact</label>
+                                        <label>Productivity impact</label>
                                         <div class="button-group btn-group btn-group-toggle">
-                                            <label class="btn btn-primary" for="default">
-                                                <input type="radio" name="type" id="default" value="default"> Yes
+                                            <label class="btn btn-primary" for="impact_yes">
+                                                <input type="radio" name="impact_yes" id="impact_yes" value="Yes"> Yes
                                             </label>
-                                            <label class="btn btn-default" for="automatic_closing">
-                                                <input type="radio" name="type" id="automatic_closing" value="automatic closing"> No
+                                            <label class="btn btn-default" for="impact_no">
+                                                <input type="radio" name="impact" id="impact_no" value="No"> No
                                             </label>
                                         </div>
                                     </div>   
                                 </div>
                                 <div class="col-xl-3 ml-5 px-5">
                                     <div class="form-group">
-                                        <label for="">Auto close after</label>
-                                        <input type="number" name="hours" id="hours" class="form-control" placeholder="Enter hours">
+                                        <label for="hours">Auto close after</label>
+                                        <input type="number" name="closing_hours" id="hours" value="2"
+                                        class="form-control" placeholder="Enter hours">
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +393,7 @@
                         </div>
                         <div class="row mt-auto">
                             <div class="col action_buttons">
-                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="eventBasic">
+                                <button class="btn btn-outline text-primary draft draft-btn" type="submit" id="draft" form="eventSeverity">
                                     Save as draft
                                 </button>
                                 <button class="btn btn-default submit" type="submit" disabled>
@@ -403,7 +404,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary carousel-button prev" href="#carousel" role="button" data-slide="prev">
+            <a class="btn btn-primary carousel-button prev prev-button" href="#carousel" role="button" data-slide="prev">
                     <i class="fas fa-arrow-left"></i>
               </a>
         </div>
@@ -427,7 +428,7 @@
                             </p>
                         </header>
 
-                        <form class="form" id="eventBasic">
+                        <form class="form" id="eventPlacement">
                             <div class="form-row">
                                 <div class="col-xl-3">
                                     <div class="form-group">
@@ -559,7 +560,7 @@
                         </div>
                         <div class="row mt-auto">
                             <div class="col action_buttons">
-                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="eventBasic">
+                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="eventPlacement">
                                     Save as draft
                                 </button>
                                 <button class="btn btn-default submit" type="submit">
@@ -570,7 +571,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary carousel-button prev" href="#carousel" role="button" data-slide="prev">
+            <a class="btn btn-primary carousel-button prev prev-button" href="#carousel" role="button" data-slide="prev">
                     <i class="fas fa-arrow-left"></i>
               </a>
         </div>
@@ -675,30 +676,30 @@
                         </div>
                         <div class="row mt-auto">
                             <div class="col action_buttons">
-                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="eventBasic">
+                                <button class="btn btn-outline text-primary draft" type="submit" id="draft" form="iconForm">
                                     Save as draft
                                 </button>
-                                <button class="btn btn-default submit" type="submit">
-                                    Next
+                                <button class="btn btn-default submit" type="submit" form="iconForm">
+                                    Submit
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary carousel-button prev" href="#carousel" role="button" data-slide="prev">
+            <a class="btn btn-primary carousel-button prev prev-button" href="#carousel" role="button" data-slide="prev">
                     <i class="fas fa-arrow-left"></i>
               </a>
         </div>
   </div>
-  <a class="btn btn-primary carousel-button" href="#carousel" role="button" data-slide="next">
+  <a class="btn btn-primary carousel-button draft-btn" href="#carousel" role="button" data-slide="next">
         <i class="fas fa-arrow-right"></i>
   </a>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script  type="module" src="js/main.js"></script>
 </body>
 </html>
 
