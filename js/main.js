@@ -1,10 +1,15 @@
 let events = [];
-let draftEvent = {};
+let draftEventBasics = {};
 const grid = $('.grid')[0];
 // brojevi - placeholder za broj ikonica
 let brojevi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
 
 const eventBasicsForm = $('#eventBasic');
+const severityForm = $('#severityForm');
+const eventPlacement = $('#eventPlacement');
+const iconForm = $('#iconForm');
+const formsList = [eventBasicsForm, severityForm, eventPlacement, iconForm];
+let current = 0;
 
 function IEvent(name, alias, type, parentEvent, description) {
     this.name = name;
@@ -21,6 +26,7 @@ function IEvent(name, alias, type, parentEvent, description) {
         description: this.description
     };
 }
+
 // function that dynamically fills in the grid on the page
 function fillGrid(arr, element) {
 
@@ -62,23 +68,27 @@ function submitForm(form, event) {
     events.push(new IEvent(values[0], values[1], values[2], values[3], values[4]));
 
     // saving the draft event because this is under the draft button event click
-    draftEvent = new IEvent(values[0], values[1], values[2], values[3], values[4]);
+    draftEventBasics = new IEvent(values[0], values[1], values[2], values[3], values[4]);
    event.preventDefault();
 }
 /******* CLICK EVENTS ******/
-$('#draft').click((e) => {
+
+// creating draft Event
+
+$('.draft-btn').click((e) => {
     e.preventDefault();
-    submitForm(eventBasicsForm, e);
-    console.log(events);
+
+    // submitForm(formsList[index], e);
 });
 
 // toggling active class on selected elements in button group fields
-$('.btn-group label').click(function (e) {
+$('.type_event_buttons label').click(function (e) {
     e.preventDefault();
     $('.btn-group label.active').not(this).removeClass('active');
     $('.btn-group label.btn-primary').not(this).removeClass('btn-primary');
     $(this).addClass('btn-primary');
     $(this).addClass('active');
+    $(this).children().prop('checked', true);
 });
 
 
@@ -90,7 +100,9 @@ $('.label_icons').click(function (e) {
 /******* CLICK EVENTS END ******/
 
 $('.carousel').carousel({
-    interval: false
+    interval: false,
+    wrap: false,
+    ride: false,
 });
 
 
